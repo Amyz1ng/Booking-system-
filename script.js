@@ -26,3 +26,60 @@
 
 //     console.log("mouse moved");
 // });
+
+// script.js
+
+function sendMail(contactForm) {
+    emailjs.send("gmail", "Pizza-berra", {
+        "from_name": contactForm.name.value,
+        "from_email": contactForm.emailaddress.value,
+        "booking_request": contactForm.booking_request.value
+    })
+    .then(
+        function(response) {
+            console.log("SUCCESS", response);
+        },
+        function(error) {
+            console.log("FAILED", error);
+        }
+    );
+    return false;  // To block from loading a new page
+}
+
+function book() {
+    const name = document.getElementById('fullname').value;
+    const email = document.getElementById('emailaddress').value;
+    const numberOfPeople = document.getElementById('numberofpeople').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const bookingInformation = document.getElementById('bookinginfomation').value;
+
+    // Do something with the variables (e.g., log to console)
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Number of People:', numberOfPeople);
+    console.log('Date:', date);
+    console.log('Time:', time);
+    console.log('Booking Information:', bookingInformation);
+}
+
+function script(form) {
+    console.log("Form submitted");
+    console.log("Name:", form.elements.name.value);
+
+    return false;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        this.book();
+    });
+});
+
+
+
+
+
