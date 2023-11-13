@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 
 /*--------------------------------------------Colors*/
-
 .bg-color-name-title {
     background-color: #676767;
     background-image: url("../images/heat-wood-fire-pizza.jpg");
@@ -11,7 +10,11 @@
     background-size: fill;
     height: 182px;
 }
-
+body{
+    flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+}
 .bg-color-three-reasons {
     background-color: #525252;
     color: black;
@@ -20,6 +23,7 @@
 .align-row{
    display: flex; 
    -ms-flex-align: row;
+   justify-content: center;
 }
 
 .card{
@@ -27,7 +31,7 @@
     margin: 5px;
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 35%;
     padding: 1%;
 }
 
@@ -111,6 +115,13 @@ h4 {
     margin-top: 25px;
     margin-bottom: 40px;
 }
+
+.section-heading {
+    font-weight: 500;
+    text-align: center;
+    font-size: 3rem;
+}
+
 
 /*--------------------------------------------Heading*/
 
@@ -211,8 +222,11 @@ header {
 footer {
     background-color: #525252;
     color: #fafafa;
-    min-height: 120px;
-    margin: 0;
+    height: 120px;
+}
+
+.footer-test{
+    margin-top: auto;
 }
 
 .cv-pdf i {
@@ -280,18 +294,21 @@ footer {
     padding: 5px;
 }
 
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.menu-pic{
     background-image: url("../images/body.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: transform 0.2s ease;
+    width: 100%;
 }
-
+.menu-container img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        margin-top: 50px;
+}
+/*.menu-container{
+    width: 50%;
+    margin: auto;
+}
 /* ----------------------------------------Personal Info */
 
 .personal-info-item {
