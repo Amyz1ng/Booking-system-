@@ -222,13 +222,15 @@ header {
 footer {
     background-color: #525252;
     color: #fafafa;
-    height: 120px;
+    height: 160px;
 }
 
 .footer-test{
     margin-top: auto;
 }
-
+.container-footer{
+    padding-left: 1px;
+}
 .cv-pdf i {
     font-size: 18px;
     color: #fafafa;
