@@ -176,6 +176,7 @@ header {
 .menucontainer {
     font-size: 0;
     height: 86px;
+   
 }
 
 #nav li {
@@ -314,13 +315,9 @@ footer {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 70%;
-        margin-top: 50px;
+       
 }
-/*.menu-container{
-    width: 50%;
-    margin: auto;
-}
+
 /* ----------------------------------------Personal Info */
 
 .personal-info-item {
@@ -464,5 +461,10 @@ div#map {
 
     .card{
         width: 100%;
+    }
+    .menu-container{ padding-top: 25%;}
+   
+    #map{
+        min-height: fit-content;
     }
 }
