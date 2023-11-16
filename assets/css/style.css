@@ -17,7 +17,8 @@ body{
 }
 .bg-color-three-reasons {
     background-color: #525252;
-    color: black;
+    /*color: black;*/
+    background-image: url(../images/pizza.jpg);
 }
 
 .align-row{
@@ -75,7 +76,7 @@ body{
 
 }
 
-/* ----------------------------------------Special paddings/margins/text */
+/* ---------------------------------------Special paddings/margins/text */
 
 h1,
 h2,
@@ -120,8 +121,15 @@ h4 {
     font-weight: 500;
     text-align: center;
     font-size: 3rem;
+    color: #f4f4f4;
 }
-
+.contact-heading{
+    color: #525252;
+    font-weight: 500;
+    text-align: center;
+    font-size: 3rem;
+    
+}
 
 /*--------------------------------------------Heading*/
 
