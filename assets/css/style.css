@@ -222,8 +222,9 @@ header {
 footer {
     background-color: #525252;
     color: #fafafa;
-    height: 160px;
+   /* height: 160px;*/
     font-size: small;
+    
 }
 
 .footer-test{
@@ -275,7 +276,7 @@ footer {
     padding: 20px;
 }
 
-/* ----------------------------------------Three Reasons */
+/* ----------------------------------------Reasons to eat */
 
 .three-reasons-icon {
     font-size: 20px;
@@ -438,7 +439,9 @@ button[type="submit"] {
     color: #fafafa;
     background-color: #e84610;
 }
-
+/*--------------------------------------------Map*/
+div#map {
+    min-height: 360px;}
 /*--------------------------------------------Media Queries*/
 
 @media (max-width: 600px) {
