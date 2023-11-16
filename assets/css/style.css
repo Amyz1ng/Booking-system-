@@ -46,20 +46,12 @@ body{
 
 }
 
-.bg-color-work-history {
-    background-color: #9b59b6;
-}
-
-.bg-color-contact {
-    background-color: #fff;
-}
-
 .ui-menu-color-home {
     background-color: #e67e22;
 }
 
-.ui-menu-color-resume {
-    background-color: #9b59b6;
+.ui-menu-color-menu {
+    background-color: #dc3545;
 }
 
 .ui-menu-color-contact {
@@ -186,6 +178,7 @@ header {
 
 #nav {
     margin: 0;
+    height: 20%;
 }
 
 .menuitem {
@@ -462,7 +455,7 @@ div#map {
     .card{
         width: 100%;
     }
-    .menu-container{ padding-top: 25%;}
+    /*.menu-container{ padding-top: 25%;}*/
    
     #map{
         min-height: fit-content;
