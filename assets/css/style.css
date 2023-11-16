@@ -35,15 +35,6 @@ body {
     display: block;
 }
 
-.booking-card {
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 5px;
-    display: flex;
-    flex-direction: row;
-    width: 35%;
-    padding: 1%;
-}
-
 .card {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 5px;
@@ -444,7 +435,7 @@ footer {
     padding-top: 10px;
     margin: 0 auto;
     max-width: 70%;
-    width: 50%;
+    width: 70%;
 }
 
 button[type="submit"] {
