@@ -30,53 +30,70 @@
 // script.js
 
 function sendMail(contactForm) {
-    emailjs.send("gmail", "Pizza-berra", {
-        "from_name": contactForm.name.value,
-        "from_email": contactForm.emailaddress.value,
-        "booking_request": contactForm.booking_request.value
-    })
+  emailjs.send("gmail", "Pizza-berra", {
+    "from_name": contactForm.name.value,
+    "from_email": contactForm.emailaddress.value,
+    "booking_request": contactForm.booking_request.value
+  })
     .then(
-        function(response) {
-            console.log("SUCCESS", response);
-        },
-        function(error) {
-            console.log("FAILED", error);
-        }
+      function (response) {
+        console.log("SUCCESS", response);
+      },
+      function (error) {
+        console.log("FAILED", error);
+      }
     );
-    return false;  // To block from loading a new page
+  return false;  // To block from loading a new page
 }
 
 function book() {
-    const name = document.getElementById('fullname').value;
-    const email = document.getElementById('emailaddress').value;
-    const numberOfPeople = document.getElementById('numberofpeople').value;
-    const date = document.getElementById('date').value;
-    const time = document.getElementById('time').value;
-    const bookingInformation = document.getElementById('bookinginfomation').value;
+  const data = {
+    name: document.getElementById('fullname').value,
+    email: document.getElementById('emailaddress').value,
+    number_of_people: document.getElementById('numberofpeople').value,
+    date: document.getElementById('date').value,
+    time: document.getElementById('time').value,
+    booking_information: document.getElementById('bookinginfomation').value
+  };
 
-    // Do something with the variables (e.g., log to console)
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Number of People:', numberOfPeople);
-    console.log('Date:', date);
-    console.log('Time:', time);
-    console.log('Booking Information:', bookingInformation);
+  fetch('https://5000-amyz1ng-bookingsystem-ca3jahzh7wi.ws-eu106.gitpod.io/insert', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Insert operation successful:', data);
+      alert('Booking successful!');
+      // Handle successful response here
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+      // Handle error here
+    });
 }
 
 function script(form) {
-    console.log("Form submitted");
-    console.log("Name:", form.elements.name.value);
+  console.log("Form submitted");
+  console.log("Name:", form.elements.name.value);
 
-    return false;
+  return false;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('myForm');
+  const form = document.getElementById('myForm');
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        this.book();
-    });
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    book();
+  });
 });
 
 
