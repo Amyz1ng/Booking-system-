@@ -4,7 +4,7 @@ from psycopg2 import Error
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/insert": {"origins": "https://8000-amyz1ng-bookingsystem-ca3jahzh7wi.ws-eu106.gitpod.io"}})
+CORS(app, resources={r"/insert": {"origins": "https://amyz1ng.github.io"}})
 
 # Connection parameters
 dbname = 'cdkgoyuf'
