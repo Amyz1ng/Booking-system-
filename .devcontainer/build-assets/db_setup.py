@@ -4,7 +4,14 @@ from psycopg2 import Error
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/insert": {"origins": "*"}})
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+    # Other CORS headers if needed
+    # ...
+    return response
 
 
 
@@ -98,3 +105,8 @@ def insert_data():
 if __name__ == '__main__':
     create_table()  # Create the table if it doesn't exist
     app.run(debug=True)
+    app.run(port=5000)
+
+
+
+
