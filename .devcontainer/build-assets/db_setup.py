@@ -103,6 +103,7 @@ def insert_data():
     return jsonify({'message': 'Insert operation successful'})
 
 if __name__ == '__main__':
+    print(app.url_map)
     create_table()  # Create the table if it doesn't exist
     app.run(debug=True)
     app.run(port=5000)
