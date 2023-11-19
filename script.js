@@ -71,7 +71,7 @@ function book() {
     })
     .then(data => {
       console.log('Insert operation successful:', data);
-      alert('Booking successful!');
+      alert('Booking successful!123');
       // Handle successful response here
     })
     .catch(error => {
@@ -79,6 +79,7 @@ function book() {
       // Handle error here
     });
 }
+
 
 function script(form) {
   console.log("Form submitted");
