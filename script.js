@@ -56,7 +56,7 @@ function book() {
     booking_information: document.getElementById('bookinginfomation').value
   };
 
-  fetch('https://5000-amyz1ng-bookingsystem-ca3jahzh7wi.ws-eu106.gitpod.io/insert', {
+  fetch('https://5000-amyz1ng-bookingsystem-mg5nw5674rr.ws-eu106.gitpod.io/insert', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
