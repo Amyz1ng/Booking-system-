@@ -48,13 +48,13 @@ RUN echo 'alias make_url="python3 $HOME/.theia/make_url.py "' >> ~/.bashrc
 COPY ./build-assets/http_server.py /home/$USERNAME/.theia/http_server.py
 RUN echo 'alias http_server="python3 $HOME/.theia/http_server.py "' >> ~/.bashrc
 
-# COPY ./build-assets/db_setup.py /home/$USERNAME/.theia/db_setup.py
-# RUN echo 'alias http_server="python3 $HOME/.theia/db_setup.py "' >> ~/.bashrc
+COPY ./build-assets/db_setup.py /home/$USERNAME/.theia/db_setup.py
+RUN echo 'alias run_db_setup="python3 $HOME/.theia/db_setup.py"' >> ~/.bashrc
 
 USER root
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME/.theia
 
-CMD ["bash", "-c", "tail -f /dev/null && python3 /home/codeany/.theia/http_server.py"]
+CMD ["bash", "-c", "python3 /home/codeany/.theia/db_setup.py && tail -f /dev/null"]
 
 # Allows proxy to work for react/drf on cloud ide's
 ENV DANGEROUSLY_DISABLE_HOST_CHECK=true
