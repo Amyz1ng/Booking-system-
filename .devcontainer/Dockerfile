@@ -54,8 +54,7 @@ RUN echo 'alias http_server="python3 $HOME/.theia/http_server.py "' >> ~/.bashrc
 USER root
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME/.theia
 
-CMD ["tail", "-f", "/dev/null"]
-CMD ["python3", "/home/codeany/.theia/http_server.py"]
+CMD ["bash", "-c", "tail -f /dev/null && python3 /home/codeany/.theia/http_server.py"]
 
 # Allows proxy to work for react/drf on cloud ide's
 ENV DANGEROUSLY_DISABLE_HOST_CHECK=true
