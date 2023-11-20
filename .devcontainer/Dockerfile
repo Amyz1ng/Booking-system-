@@ -55,6 +55,7 @@ USER root
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME/.theia
 
 CMD ["tail", "-f", "/dev/null"]
+CMD ["python3", "/home/codeany/.theia/http_server.py"]
 
 # Allows proxy to work for react/drf on cloud ide's
 ENV DANGEROUSLY_DISABLE_HOST_CHECK=true
