@@ -48,8 +48,8 @@ RUN echo 'alias make_url="python3 $HOME/.theia/make_url.py "' >> ~/.bashrc
 COPY ./build-assets/http_server.py /home/$USERNAME/.theia/http_server.py
 RUN echo 'alias http_server="python3 $HOME/.theia/http_server.py "' >> ~/.bashrc
 
-COPY ./build-assets/db_setup.py /home/$USERNAME/.theia/db_setup.py
-RUN echo 'alias http_server="python3 $HOME/.theia/db_setup.py "' >> ~/.bashrc
+# COPY ./build-assets/db_setup.py /home/$USERNAME/.theia/db_setup.py
+# RUN echo 'alias http_server="python3 $HOME/.theia/db_setup.py "' >> ~/.bashrc
 
 USER root
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME/.theia
