@@ -4,16 +4,13 @@ from psycopg2 import Error
 from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.after_request
 def add_cors_headers(response):
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
-    # Other CORS headers if needed
-    # ...
     return response
-
-
 
 # Connection parameters
 dbname = 'cdkgoyuf'
@@ -90,7 +87,6 @@ def insert_data_in_db(name, email, number_of_people, date, time, booking_informa
 
 @app.route('/insert', methods=['POST'])
 def insert_data():
-    print('teststuff')
     name = request.json.get('name')
     email = request.json.get('email')
     number_of_people = request.json.get('number_of_people')
@@ -103,11 +99,5 @@ def insert_data():
     return jsonify({'message': 'Insert operation successful'})
 
 if __name__ == '__main__':
-    print(app.url_map)
     create_table()  # Create the table if it doesn't exist
-    app.run(debug=True)
-    app.run(port=5000)
-
-
-
-
+    app.run(debug=True, port=5000)
