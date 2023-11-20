@@ -39,6 +39,8 @@ RUN echo 'alias python=python3' >> ~/.bashrc && \
     echo 'alias pip=pip3' >> ~/.bashrc && \
     echo 'alias psql="psql mydb"' >>  ~/.bashrc
 
+RUN pip install Flask==2.0.1 psycopg2==2.9.1 flask-cors==3.1.1
+
 COPY ./build-assets/heroku_config.sh /home/$USERNAME/.theia/heroku_config.sh
 RUN echo 'alias heroku_config=". $HOME/.theia/heroku_config.sh"' >> ~/.bashrc
 
