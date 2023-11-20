@@ -1,10 +1,12 @@
 image:
-  file: .devcontainer/Dockerfile
+  file: .gitpod.Dockerfile
 
 tasks:
   - name: Setup and Start Server
-    command: python .devcontainer/build-assets/db_setup.py
-    # Adjust the path to the db_setup.py script based on its location within the project
+    command: |
+      cd .devcontainer/build-assets
+      python db_setup.py
+    # Replace the commands with the appropriate paths to your scripts or server startup commands
 
 ports:
   - port: 5000
