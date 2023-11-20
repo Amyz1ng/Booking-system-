@@ -88,20 +88,6 @@ function script(form) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  const { exec } = require('child_process');
-
-  exec('python db_setup.py', (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.error(`Error: ${stderr}`);
-      return;
-    }
-    console.log(`Output: ${stdout}`);
-  });
-
   const form = document.getElementById('myForm');
 
   form.addEventListener('submit', function (event) {
