@@ -1,0 +1,11 @@
+image:
+  file: .devcontainer/Dockerfile
+
+tasks:
+  - name: Setup and Start Server
+    command: python /workspace/.devcontainer/build-assets/db_setup.py
+    # Adjust the path to the db_setup.py script based on its location within the project
+
+ports:
+  - port: 5000
+    onOpen: ignore
